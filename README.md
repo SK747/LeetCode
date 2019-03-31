@@ -1,2 +1,2 @@
 # LeetCode
-My Leedcode solutions. Python and C
+My Leetcode solutions. Python and C
