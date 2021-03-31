@@ -18,5 +18,5 @@
  *  nums: the array
  *  size: size of the array
  *
- *  returns: the solution array containing the indices of the solutions in the arra
-y */
+ *  returns: the solution array containing the indices of the solutions in the array */
+
