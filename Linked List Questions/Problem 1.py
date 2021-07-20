@@ -1,10 +1,16 @@
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
 class MyLinkedList(object):
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        
+        self.head = None
+        self.size = 0
 
     def get(self, index):
         """
@@ -12,6 +18,16 @@ class MyLinkedList(object):
         :type index: int
         :rtype: int
         """
+        if index < 0 or index >= self.size:
+            return -1
+        
+        if self.head is None:
+            return -1
+
+        curr = self.head
+        for i in range(index):
+            curr = curr.next
+        return curr.val
         
 
     def addAtHead(self, val):
