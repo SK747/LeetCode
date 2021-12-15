@@ -6,3 +6,8 @@ class Solution:
                 if jewels[d] == stones[c]:
                     count += 1
         return count
+
+s = Solution()
+jewels = 'aA'
+stones = 'aaabbA'
+print(s.numJewelsInStones(jewels, stones))
