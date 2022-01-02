@@ -17,7 +17,6 @@ class Solution:
             elif t1.val != t2.val:
                 return False
             
-            return (flip(t1.left, t2.left) and flip(t1.right, t2.right)) or \
-                    (flip(t1.left, t2.right) and flip(t1.right, t2.left))
+            return (flip(t1.left, t2.left) and flip(t1.right, t2.right)) or (flip(t1.left, t2.right) and flip(t1.right, t2.left))
         
         return flip(root1, root2)

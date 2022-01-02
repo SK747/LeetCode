@@ -20,7 +20,7 @@ class Solution2:
             if arr[i] > arr[i+1] and arr[i] > arr[i-1]:
                 return i
             elif arr[i] > arr[i+1] and arr[i] < arr[i-1]:
-                i = i - 1
+                i = i//2
             elif arr[i] < arr[i+1] and arr[i] > arr[i-1]:
                 i = i + 1
 
