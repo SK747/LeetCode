@@ -1,0 +1,25 @@
+## SOLUTION
+## Its easy to do this just by using two for loops but thats O(n^2) complexity so lets avoid that
+## Using a hash map is the better solution
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        ## if not same length, immeditely not an anagram
+        if len(s) != len(t):
+            return False
+        
+        countS, countT = {},{} ## Use dictionaries to basically store each letter and how many times its been used
+        for i in range(len(s)):
+            countS[s[i]] = 1 + countS.get(s[i],0) ## THE GET IS FOR THE CASE THAT CountS is NOT INTIIALIZED
+            countS[s[i]] = 1 + countS.get(s[i],0)
+        for j in countS:
+            if countS[j] != countT[j]:
+                return False
+        return True
+
+            
+
+
+
+
+s = Solution()

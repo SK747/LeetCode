@@ -1,0 +1,49 @@
+## Quick Solution using python sort
+## Faster than 60%, less memory than 31%
+## SORTING TAKES TIME. O(n log n)
+## Done in 5 minutes. 
+
+class Solution:
+    def containsDuplicate(self, nums):
+        nums.sort()
+        for i in range(len(nums)-1):
+            print(nums[i], 'and', nums[i+1])
+            if nums[i] == nums[i+1]:
+                return False
+        return True
+
+
+
+## O(n^2) Solution since we check every other part of the array for each number
+## O(1) memory
+
+class Solution2:
+    def containsDuplicate(self, nums):
+        nums.sort()
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                print(i,'and', j)
+                print(nums[i], 'and', nums[j])
+                if nums[i] == nums[j]:
+                    return True
+        return False
+
+## IMPORTANT
+## We can sacrifice some memory to achieve better run time using a hash map
+##  HashSet is an unordered collection. It does not maintain the order in which the elements are inserted.
+## Here we can use it by only adding elements not duplicates to our hash set
+## then we can compare merely against the hash set and not every other element...
+
+class Solution3:
+    def containsDuplicate(self, nums):
+        hashset = set()
+        for i in nums:
+            if i in hashset:
+                return True
+            hashset.add(i)
+        return False
+
+
+test = [3,1,4,5,5]
+s = Solution2()
+print(s.containsDuplicate(test))
