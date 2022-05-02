@@ -1,0 +1,26 @@
+""" Given an integer array nums and an integer k, return the k most frequent elements.
+ You may return the answer in any order.
+ """
+
+ ## This seems like a relatively simple hashset/hashdict problem
+ ## Just set up a dict with a key value pair
+ ## can utilize the max function but then we'll need to use delete too. 
+ ## No memory limitations so this is fine
+
+class Solution:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+        keyvaldict = {}
+        returnlist = []
+        for i in range(len(nums)):
+            keyvaldict[nums[i]] = 1 + keyvaldict.get(nums[i],0)
+        while k > 0:
+            fin_max = max(keyvaldict, key=keyvaldict.get)
+            returnlist.append(fin_max)
+            del keyvaldict[fin_max]
+            k = k - 1
+        return returnlist
+
+
+
+s = Solution()
+print(s.topKFrequent([1,2,3,3,4,4,4],2))

@@ -1,0 +1,67 @@
+""" Given an array of strings strs, group the anagrams together. 
+You can return the answer in any order.
+
+An Anagram is a word or phrase formed by rearranging the letters of
+a different word or phrase, typically using all the original letters exactly once."""
+
+## Use a set of hashmaps
+## Entering every string, compare it with every existing hashmap
+## Expensive... but probably the best way?
+## need list of dictionaries
+
+from regex import F
+from collections import defaultdict
+
+
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        dictlist = []
+        for i in range(len(strs)):
+            for j in strs[i]:
+                print('hm')
+
+## A simpler, faster way is to use prime factorization via Godel's uniqueness theorem
+## defaultdict never has key error
+
+class Solution2:
+    def __init__(self):
+        self._primes = {'a': 2, 
+                  'b': 3, 
+                  'c': 5, 
+                  'd': 7, 
+                  'e': 11, 
+                  'f': 13,
+                  'g': 17,
+                  'h': 19,
+                  'i': 23,
+                  'j': 29,
+                  'k': 31,
+                  'l': 37,
+                  'm': 41,
+                  'n': 43,
+                  'o': 47,
+                  'p': 53,
+                  'q': 59,
+                  'r': 61,
+                  's': 67, 
+                  't': 71,
+                  'u': 73,
+                  'v': 79,
+                  'w': 83,
+                  'x': 89,
+                  'y': 97,
+                  'z': 101
+                 }
+        
+    
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        subLists = defaultdict(list)        
+        for string in strs:
+            product = 1            
+            for character in string:
+                product *= self._primes[character]                
+            subLists[product].append(string)            
+        return subLists.values()
+                
+s = Solution2()
+print(s.groupAnagrams(['hey','my','name','si','is']))
