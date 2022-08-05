@@ -26,5 +26,5 @@ class Solution:
 s = Solution()
 arr1 = ['ey','yo']
 arr2 = ['ye','gh']
+
 print(s.DetermineAnagrams(arr1,arr2))
-        

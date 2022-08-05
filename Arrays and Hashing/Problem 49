@@ -13,13 +13,6 @@ from regex import F
 from collections import defaultdict
 
 
-class Solution:
-    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        dictlist = []
-        for i in range(len(strs)):
-            for j in strs[i]:
-                print('hm')
-
 ## A simpler, faster way is to use prime factorization via Godel's uniqueness theorem
 ## defaultdict never has key error
 

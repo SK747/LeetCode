@@ -19,5 +19,5 @@ class Solution:
             
 
 s = Solution()
-print(s.isPalindrome('hmemh'))
+print(s.isPalindrome('hme mh'))
         

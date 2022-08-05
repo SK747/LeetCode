@@ -11,15 +11,12 @@ class Solution:
         countS, countT = {},{} ## Use dictionaries to basically store each letter and how many times its been used
         for i in range(len(s)):
             countS[s[i]] = 1+countS.get(s[i],0) ## THE GET IS FOR THE CASE THAT CountS is NOT INTIIALIZED
-            countT[s[i]] = 1+countT.get(s[i],0)
+            countT[t[i]] = 1+countT.get(t[i],0)
         
-        for j in range(len(s)):
-            if countS[s[j]] != countT[s[j]]:
-                return False
-        return True
+        return countS == countT
     
 s = Solution()
-print(s.isAnagram('heyy','yhye'))
+print(s.isAnagram('rat','car'))
 
 
 
