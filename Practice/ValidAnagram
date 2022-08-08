@@ -1,0 +1,32 @@
+class Solution:
+    def isAnagram(self, s, t):
+        ## So here we are provided two arrays and want to see if they are anagrams
+        ## I dont even KNOW how you would do this without a hashmap since the ideal way is to count how many of each letter appears
+        ## however in this case we will use a dictionary instead
+        ## we need two to store both arrays and compare the two
+        hashdict1 = {}
+        hashdict2 = {}
+        if len(s) != len(t):
+            return False ## obviously if they have different number of letters they are not anagrams
+
+        for i in range(len(s)): ## since they are the same length we can just use this to go through them
+            ## now we want to add everything to the hashdicts. We'll compare them later
+            ## WE WANT TO ADD THE LETTER AND THEN THE NUMBER OF TIMES INTO THE VALUE
+            ## Use GET because the dict is initially empty
+            hashdict1[s[i]] = 1 + hashdict1.get(s[i],0)
+            hashdict2[t[i]] = 1 + hashdict2.get(t[i],0)
+
+        ## Now we want to compare the two
+        ## We can just return:
+        print(hashdict2)
+        print(hashdict1)
+        return hashdict1 == hashdict2
+
+
+
+s = Solution()
+arr1 = 'hello'
+
+arr2 = 'ohell'
+
+print(s.isAnagram(arr1,arr2))

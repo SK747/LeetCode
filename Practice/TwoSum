@@ -1,0 +1,24 @@
+class Solution:
+    def twoSum(self, nums, target):
+        ## Well no one will ever ask this but whatever
+        ## Gotta find the two numbers that add up to the target
+        ## The array is NOT sorted and we cant sort it for this question
+        ## Now obviously the two pointers thing works here
+        ## However, that is O(n^2) or O(nlogn) worst case and we can do this in O(n)
+        ## set lookup is an O(1) operation 
+        ## dict lookup is also an O(1) operation
+        ## The dict value will be the number and its value will be the index
+        hashdict = {}
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in hashdict: ## Can I do this or do I need to do keys? Yes you can
+                return [hashdict[diff],i]
+            else:
+                hashdict[nums[i]] = i
+        ## Normally I did this with enumerate but we dont really need it
+        ## This is an O(n) solution
+
+s = Solution()
+arr1 = [2,1,4,5,6]
+
+print(s.twoSum(arr1,9))
