@@ -1,0 +1,17 @@
+
+
+class Solution:
+    def groupAnagrams(self, strs):
+        ## so we want to output a list of lists
+        ## So first of all, the easy way is to obviously sort these...
+        ## But then we want to return a list of lists, how are we going to do that?
+        ## So this solution would work perfectly if leetcode would allow you to use lists as keys
+        hashmap = {}
+        for i in range(len(strs)):
+            s = sorted(strs[i])
+            print(s)
+
+        
+s = Solution()
+strs = ["eat","tea","tan","ate","nat","bat"]
+s.groupAnagrams(strs)

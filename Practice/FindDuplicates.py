@@ -13,12 +13,16 @@ class Solution:
                 hashmap.add(nums[i])
         return False
 
+    ## Althoughhh If we are using sets, we may as well just use a set and return the length!! haha
     def containsDuplicate2(self, nums:list[int]) -> bool:
         nums2 = set(nums)
-        return len(nums2) == len(nums)
+        return len(nums2) != len(nums)
         
 
 s = Solution()
 arr1 = [1,2,3,4]
 
 print(s.containsDuplicate(arr1))
+
+arr2 = [1,1,2,3,4,0]
+print(set(arr2))

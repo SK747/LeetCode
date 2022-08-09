@@ -1,0 +1,71 @@
+"""Input: nums = [1,2,3,4]
+Output: [24,12,8,6]"""
+
+## So this is basically a logic problem more or less
+## We need to simplify this nonsense somehow
+## I mean we can use two pointers. And have an if statement that prevents it from visiting the same one
+## Then you place the result in the second array using the same index as the first pointer
+## O(n^2) in all cases for this algorithm
+## However, we dont need to pass the pointer all the way back
+## Instead we can just bring the second pointer back to the second item after calculating the first multiplication
+## And then we can iterate over the whole array again, dividing with the current number and multiplying by the previous
+## This will be O(2n) = O(n)
+
+## The problem with this code is there will be a lot of edge cases
+## Its not elegant but we can get it to work even if the input array has a 0
+
+class Solution(object):
+    def productExceptSelf(self, nums):
+        left = 0
+        multiple = 1
+        right = 1
+        retarray = []
+
+        for i in range(len(nums)):
+            multiple = multiple*nums[i]
+
+        multiple = multiple / nums[0]
+        retarray.append(multiple)
+
+        while right <= len(nums)-1:
+            multiple = multiple * nums[left]/nums[right]
+            right = right + 1
+            left = left + 1
+            retarray.append(multiple)
+
+        return retarray
+
+
+    ## Okay I didnt read that they didnt want the division operation.
+    ## Thats a bit more annoying
+    ## What we're going to do is instead initialize two separate arrays that are going to be used as middle arrays
+    ## Then we're going to multiply the elements of these two arrays to get the answer.
+    ## How? The first array includes all the multiples to the left of the number
+    ## The second includes all the multiples to the right of the number
+    ## Obviously this will give us the answer.
+
+
+    def productExceptSelf2(self, nums):
+        retarray = []
+        midarray = [1]
+        midarray2 = [1]
+        ## We can populate both arrays in the same loop
+        ## Avoid using reversed in loop since its an O(n) each time. We could just reverse nums but this works too
+        for i in range(len(nums)-1):
+            midarray.append(midarray[i]*nums[i])
+            midarray2.append(midarray2[i]*nums[len(nums)-1-i])
+        midarray2.reverse()
+        for i in range(len(midarray)):
+            retarray.append(midarray[i]*midarray2[i])
+        return retarray
+
+
+
+
+
+
+
+
+s = Solution()
+nums = [1,2,3,4]
+print(s.productExceptSelf2(nums))

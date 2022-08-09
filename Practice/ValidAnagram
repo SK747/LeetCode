@@ -23,10 +23,15 @@ class Solution:
         return hashdict1 == hashdict2
 
 
+    def isAnagram2(self, s, t):
+        ## I mean if you use the sorted command we see later this question is a joke
+        return sorted(s) == sorted(t)
+
+
 
 s = Solution()
 arr1 = 'hello'
 
-arr2 = 'ohell'
+arr2 = 'ohella'
 
-print(s.isAnagram(arr1,arr2))
+print(s.isAnagram2(arr1,arr2))
