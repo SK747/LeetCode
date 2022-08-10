@@ -17,8 +17,59 @@ class Solution:
                 hashdict[nums[i]] = i
         ## Normally I did this with enumerate but we dont really need it
         ## This is an O(n) solution
+    
+    def twoSum2(self, nums, target):
+        # This actually sends back the two numbers that add up to that
+        # In this case we don't need a dict, we just need an array
+        hashset = set()
+
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in hashset:
+                return [diff,nums[i]]
+            else:
+                hashset.add(nums[i])
+
+    ## This twosum is actually for 3 sum but its here anyway lol
+    def twoSum3(self, nums, index,retarray):
+        hashset = set()
+        for i in range(len(nums)):
+            if i != index:
+                diff = (nums[index] + nums[i])*-1
+                if diff in hashset:
+                    retarray.append([diff,nums[i],nums[index]])
+                else:
+                    hashset.add(nums[i])
+        return retarray
+
+    ## Okay for this one we are given an array that is already sorted
+    ## So we can solve it much more easily
+    ## It will still be O(n) I guess but with no memory since we will use pointers
+    ## We only have to iterate once and we dont need any extra memory
+    def twoSum4(self, nums, target,arr):
+        l = 0
+        r = len(nums)-1
+        while l < r:
+            if nums[l]+nums[r] == target:
+                arr.append([l,r])
+                l += 1
+            if nums[l]+nums[r] > target:
+                r -= 1
+            if nums[l]+nums[r] < target:
+                l += 1
+        return arr
+        
+
 
 s = Solution()
-arr1 = [2,1,4,5,6]
+arr1 = [2,1,4,5,6,-3,-1]
 
-print(s.twoSum(arr1,9))
+
+print(s.twoSum3(arr1,5,[]))
+
+arr2 = [1,2,3,4,5,6,7,8]
+arr3 = []
+
+print(s.twoSum4(arr2,5,arr3))
+
+
