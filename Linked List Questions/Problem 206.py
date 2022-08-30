@@ -23,4 +23,3 @@ class Solution(object):
             curr = temp
         return prev # Prev is now the head
             
-        
