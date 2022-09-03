@@ -29,7 +29,35 @@ class Solution:
                 hashset.add(nums[i])
         return retarray
     ## Okay this solution still contains duplicates so we need a new solution.
-    ## So obviously the solution is that we dont want to iterate over the loop AGAIN. we just want 
+    ## So obviously the solution is that we dont want to iterate over the loop AGAIN.
+    ## However this is easier to do just by sorting the array. 
+    ## Once we sort the array we just want to make sure that we dont use the same number twice
+    ## Then on the remainder of the array. Since it is sorted we can use a two pointer twosum approach.
+    def sum2(self, nums,target,arr,l):
+        r = len(nums)-1
+        while l < r:
+            if nums[l]+nums[r] == target:
+                arr.append([nums[l],nums[r]])
+                l += 1
+            if nums[l]+nums[r] > target:
+                r -= 1
+            if nums[l]+nums[r] < target:
+                l += 1
+        return arr
+    def sum3(self, nums: list[int]) -> bool:
+        hashset = set()
+        retarray = []
+        nums = sorted(nums)
+        for i in range(len(nums)):
+            if nums(i) not in hashset:
+                retarray = self.sum2(nums,)
+
+
+
+        
+
+
+
 
         
         

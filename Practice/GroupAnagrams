@@ -6,6 +6,7 @@ class Solution:
         ## So first of all, the easy way is to obviously sort these...
         ## But then we want to return a list of lists, how are we going to do that?
         ## So this solution would work perfectly if leetcode would allow you to use lists as keys
+        ## sorted is n log n so not good
         hashmap = {}
         for i in range(len(strs)):
             s = sorted(strs[i])
