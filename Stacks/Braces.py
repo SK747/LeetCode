@@ -30,5 +30,5 @@ class Solution:
             return False
 
 s = Solution()
-print(s.CheckBraces('([)]'))
+print(s.CheckBraces(']'))
                 
