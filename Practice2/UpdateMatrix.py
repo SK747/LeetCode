@@ -5,6 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         # Okay well, if it is zero, then we just keep it as zero
+        
         for i in range(len(mat)):
             for j in range(len(mat[i])):
                 if mat[i][j] == 0:

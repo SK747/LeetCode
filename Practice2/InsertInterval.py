@@ -1,8 +1,20 @@
 class Solution(object):
     def insert(self, intervals, newInterval):
         arr = []
+        high = 0
         for i in range(len(intervals)):
-            arr.append(intervals[i])
+            if intervals[i[1]] < newInterval[0]:
+                arr.append(intervals[i])
+            
+            elif intervals[i[0]] > newInterval[1]:
+                arr.append(intervals[i])
+            
+            elif intervals[i[0]] < newInterval[0] and intervals[i[1]] < newInterval[1]:
+                newmin = intervals[i[0]]
+            
+            elif intervals[i[0]] < newInterval[0] and intervals[i[1]] < newInterval[1]:
+                newmin = intervals[i[0]]
+            
         return arr
 
 

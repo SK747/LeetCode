@@ -14,3 +14,20 @@ if 1 in dict:
 if 3 in dict.values():
     print('true')
 
+
+# Linked Lists
+
+ # You can just add the list to the end without needing to iterate
+
+
+ # class MyQueue(object):
+ #   stack1 = []
+ #   stack2 = []
+
+ #   def __init__(self):
+        # not sure what goes here actually
+ #       self.stack1 = []
+ #       self.stack2 = []
+
+# Can do something like return array + array2[i:]
+

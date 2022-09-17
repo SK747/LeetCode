@@ -91,6 +91,15 @@ class Solution(object):
 
         return dummy.next
 
+    
+    def linkedlistcycle(self, list1, list2):
+        # Well this is a ridiculous question
+        # Basically need to use tortoise and hare algorithm
+        print('okay')
+
+    
+        
+
         
 
 llist = LinkedList()
