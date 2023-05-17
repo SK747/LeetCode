@@ -10,7 +10,7 @@ class Node(object):
 
 class LinkedList(object):
     def __init__(self, head=None):
-        self.head = head
+        self.head = head 
 
     def printList(self): 
         temp = self.head 
@@ -30,7 +30,7 @@ class LinkedList(object):
 
     def insert_at_head(self, data):
         new_node = Node(data)
-        new_node= self.head
+        new_node.next = self.head
         self.head = new_node
 
     def insert_at_end(self, data):
@@ -105,6 +105,10 @@ class Solution(object):
 llist = LinkedList()
 llist.head = Node(1)
 llist.insert_at_end(2)
+llist.printList()
+
+"""
+llist.insert_at_end(2)
 llist.insert_at_end(3)
 llist.insert_at_end(5)
 llist.insert_at_end(6)
@@ -119,7 +123,7 @@ llist2.printList()
 
 s = Solution()
 s.mergeTwoLists(llist, llist2)
-
+"""
 
 
 

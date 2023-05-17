@@ -78,7 +78,7 @@ class BstNode:
     def value(self):
         print(b.key)
 
-    ## This is preorder traversal
+    ## This is preorder traversal. depth first search?
     def PrintTreeBalanced(self):
         print(self.key)
         if self.left:
@@ -165,6 +165,16 @@ class BstNode:
             self.right.lowestcommonancestor(p,q)
         if (p < self.key and q < self.key):
             self.left.lowestcommonancestor(p,q)
+
+    def FindDepth(self):
+        if self.left is None:
+            return 0
+        else:
+            print(self.key)
+            lleft = self.left.FindDepth()
+        
+        return lleft+1
+        
         
             
         
@@ -177,8 +187,10 @@ for _ in range(10):
     b.insert(random.randint(0, 40))
 b.display()
 b.value()
+b.invertTree()
 b.display()
 print(b.lowestcommonancestor(4,22))
+print(b.FindDepth())
 
 
 

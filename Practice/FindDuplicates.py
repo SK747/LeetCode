@@ -26,3 +26,4 @@ print(s.containsDuplicate(arr1))
 
 arr2 = [1,1,2,3,4,0]
 print(set(arr2))
+

@@ -72,7 +72,11 @@ class Solution(object):
                 q = q.next
                 tail = tail.next
         
-        print(list1.head.data) 
+        if p:
+            tail.next = p
+        if q:
+            tail.next = q
+        
 
 
     

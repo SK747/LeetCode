@@ -58,18 +58,23 @@ class Solution:
             if nums[l]+nums[r] < target:
                 l += 1
         return arr
-        
+    
+    def twosum5(self, nums, target):
+        for i in range(len(nums)):
+            for j in range(i,len(nums)):
+                print(i,j)
+                if nums[i] + nums[j] == target:
+                    return [i,j]
 
 
 s = Solution()
-arr1 = [2,1,4,5,6,-3,-1]
+arr1 = [2,5,6,1,4,-3,-1]
 
 
-print(s.twoSum3(arr1,5,[]))
+print(s.twosum5(arr1,5))
 
 arr2 = [1,2,3,4,5,6,7,8]
 arr3 = []
 
-print(s.twoSum4(arr2,5,arr3))
 
 

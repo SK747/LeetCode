@@ -14,9 +14,9 @@ def ValidSudoku(nums):
                 hashset1.add(nums[j][i])
                 hashdict1[i].add(nums[j][i])
                 hashdict2[(j//3,i//3)].add(nums[j][i])
-                print('I and J are', i,'and', j, 'Nums is', nums[j][i],',', hashset1)
-                print(hashdict2)
-                print(hashdict1)
+                #print('I and J are', i,'and', j, 'Nums is', nums[j][i],',', hashset1)
+                #print(hashdict2)
+                #print(hashdict1)
             else:
                 return True
         hashset1.clear()
